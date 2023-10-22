@@ -150,7 +150,7 @@ p32=560
 tabla2=crea.tablaX(c(p11,p12,
                      p21,p22,
                      p31,p32),3,2)
-tabla2
+kable(tabla2)
 
 ```
 Resolvemos el problema:

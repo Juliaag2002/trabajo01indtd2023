@@ -854,6 +854,91 @@ puntoId_cost</code></pre>
 </div>
 <div id="problema-2" class="section level1">
 <h1>Problema 2</h1>
+<p>Jimena esta planeando un viaje de 3 días a malta con su pareja pero
+no sabe que hotel reservar.Las tres opciones que le ha dado la agencia
+son:</p>
+<p>Hotel St.George`s: Alojamiento+vuelo+desayuno 419€ / Todo incuido:
+549€<br />
+Alexandra hotel: Alojamiento+vuelo+desayuno 479€ / Todo incluido:
+536€<br />
+Qawara palace horel: Alojamiento+vuelo+desayuno 439€ / Todo incluido:
+560€</p>
+<p>Teniendo en cuenta que se gastarían una media de 22€ y 18€ en comer y
+cenar respectivamente ¿Cual deberia escoger?</p>
+<div id="a-continuación-comenzaremos-con-su-resolución-utilizando-todos-los-criterios-a-la-vez" class="section level2">
+<h2>A continuación comenzaremos con su resolución utilizando todos los
+criterios a la vez:</h2>
+<p>Creamos la tabla con la que trabajaremos:</p>
+<pre class="r"><code>p11=419+22*3+18*3
+p12=549
+p21=479+22*3+18*3
+p22=536
+p31=439+22*3+18*3
+p32=560
+tabla2=crea.tablaX(c(p11,p12,
+                     p21,p22,
+                     p31,p32),3,2)
+kable(tabla2)</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+e1
+</th>
+<th style="text-align:right;">
+e2
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+d1
+</td>
+<td style="text-align:right;">
+539
+</td>
+<td style="text-align:right;">
+549
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+d2
+</td>
+<td style="text-align:right;">
+599
+</td>
+<td style="text-align:right;">
+536
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+d3
+</td>
+<td style="text-align:right;">
+559
+</td>
+<td style="text-align:right;">
+560
+</td>
+</tr>
+</tbody>
+</table>
+<p>Resolvemos el problema:</p>
+<pre class="r"><code>sol=criterio.Todos(tabla2,F)
+sol</code></pre>
+<pre><code>##                  e1  e2 Wald Optimista Hurwicz Savage Laplace Punto Ideal
+## d1              539 549  539       549     539     60   544.0          61
+## d2              599 536  536       599     536     24   567.5          24
+## d3              559 560  559       560     559     40   559.5          40
+## iAlt.Opt (fav.)  --  --   d3        d2      d3     d2      d2          d2</code></pre>
+<p>Se puede ver que en 4 de ellos se elige el hotel número 2 y en 2 de
+ellos (Wald,Hurwicz) se elige el hotel número 3.</p>
+</div>
 </div>
 
 
