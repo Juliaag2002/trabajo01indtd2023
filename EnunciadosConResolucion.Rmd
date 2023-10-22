@@ -58,18 +58,18 @@ La alternativa óptima es d3 con valor óptimo -2
 ### -Método de hurwicz  
 Para beneficios:  
 ```{r}
-hurw_benef=criterio.Hurwicz(tabla1,alfa=0.7,favorable=T)
+hurw_benef=criterio.Hurwicz(tabla1,alfa=0.5,favorable=T)
 hurw_benef
 ```
 
-La alternativa óptima es d1 con valor óptimo 6,6  
+Las alternativa óptimas son d1 y d2 con valor óptimo 5  
 Para costos:  
 ```{r}
-hurw_cost=criterio.Hurwicz(tabla1,alfa=0.7,favorable=F)
+hurw_cost=criterio.Hurwicz(tabla1,alfa=0.5,favorable=F)
 hurw_cost
 
 ```
-La alternativa óptima es d3 con valor óptimo 0,4  
+La alternativa óptima es d4 con valor óptimo 1  
 
 Dibujemos a continuación el gráfico que muestra la mejor alternativa para cada valor de alfa en ambos casos:  
 Para beneficios:
