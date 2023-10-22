@@ -1,0 +1,107 @@
+---
+title: "Enunciados con su resolución"
+author: "Julia"
+date: "2023-10-22"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Problema 1
+Aplicar todos los criterios de decisión bajo incertidumbre tanto para costos como para beneficios al problema cuya matriz de valores numéricos viene dada en la tabla siguiente:
+
+
+```{r, echo=FALSE}
+library(kableExtra)
+source("teoriadecision_funciones_incertidumbre.R")
+tabla1=crea.tablaX(c(1,3,9,
+                       4,3,7,
+                       5,-2,6,
+                       1,2,0
+                       ),numalternativas = 4,numestados = 3)
+
+kable(tabla1)
+```
+
+##A continuación comenzaremos con su resolución utilizando los diferentes criterios:
+###-Método wald
+Para beneficios:
+```{r}
+wald_benef=criterio.Wald(tabla1,favorable = T)
+wald_benef
+```
+La alternativa óptima es d2 con valor óptimo 3
+Para costos:
+```{r}
+wald_cost=criterio.Wald(tabla1,favorable = F)
+wald_cost
+```
+La alternativa óptima es d4 con valor óptimo 2
+
+###-Método optimista
+Para beneficios:
+```{r}
+opt_benef=criterio.Optimista(tabla1,T)
+opt_benef
+```
+La alternativa óptima es d1 con valor óptimo 9
+Para costos:
+```{r}
+opt_cost=criterio.Optimista(tabla1,F)
+opt_cost
+```
+La alternativa óptima es d3 con valor óptimo -2
+###-Método de hurwicz
+Para beneficios:
+```{r}
+hurw_benef=criterio.Hurwicz(tabla1,alfa=0.7,favorable=T)
+hurw_benef
+```
+La alternativa óptima es d1 con valor óptimo 6,6
+Para costos:
+```{r}
+hurw_cost=criterio.Hurwicz(tabla1,alfa=0.7,favorable=F)
+hurw_cost
+```
+La alternativa óptima es d3 con valor óptimo 0,4
+###-Método savage
+Para beneficios:
+```{r}
+savg_benef=criterio.Savage(tabla1,T)
+savg_benef
+```
+La alternativa óptima es d2 con valor óptimo 2
+Para costos:
+```{r}
+savg_cost=criterio.Savage(tabla1,F)
+savg_cost
+```
+La alternativa óptima es d4 con valor óptimo 4
+###-Método de laplace
+Para beneficios:
+```{r}
+laplc_benef=criterio.Laplace(tabla1,T)
+laplc_benef
+```
+La alternativa óptima es d2 con valor óptimo 4,667
+Para costos:
+```{r}
+laplc_cost=criterio.Laplace(tabla1,F)
+laplc_cost
+```
+La alternativa óptima es d4 con valor óptimo 1
+
+
+
+
+
+
+
+
+
+
+
+
+
