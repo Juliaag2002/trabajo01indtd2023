@@ -13,15 +13,16 @@ knitr::opts_chunk$set(echo = TRUE)
 Aplicar todos los criterios de decisión bajo incertidumbre tanto para costos como para beneficios al problema cuya matriz de valores numéricos viene dada en la tabla siguiente de forma conjunta y por separado:
 
 
-```{r}
+```{r, echo=FALSE}
 library(kableExtra)
 source("teoriadecision_funciones_incertidumbre.R")
-tabla_1a=crea.tablaX(c(5,4,6,
-                       2,3,1,
-                       -1,8,7,
-                       5,2,0
+tabla1=crea.tablaX(c(1,3,9,
+                       4,3,7,
+                       5,-2,6,
+                       1,2,0
                        ),numalternativas = 4,numestados = 3)
 
+kable(tabla1)
 ```
 
 ## Problema 2
