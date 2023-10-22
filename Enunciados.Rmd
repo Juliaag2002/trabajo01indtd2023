@@ -1,0 +1,34 @@
+---
+title: "Enunciados"
+author: "Julia"
+date: "2023-10-21"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Problema 1
+Aplicar todos los criterios de decisión bajo incertidumbre tanto para costos como para beneficios al problema cuya matriz de valores numéricos viene dada en la tabla siguiente de forma conjunta y por separado:
+
+
+```{r}
+library(kableExtra)
+source("teoriadecision_funciones_incertidumbre.R")
+tabla_1a=crea.tablaX(c(5,4,6,
+                       2,3,1,
+                       -1,8,7,
+                       5,2,0
+                       ),numalternativas = 4,numestados = 3)
+
+```
+
+## Problema 2
+
+
+
+```{r, echo=FALSE}
+
+```
+
