@@ -128,10 +128,35 @@ puntoId_cost
 La alternativa óptima es d4 con valor óptimo 4   
 
 
-# Problema 2
+# Problema 2  
 
+Jimena esta planeando un viaje de 3 días a malta con su pareja pero no sabe que hotel reservar.Las tres opciones que le ha dado la agencia son:  
 
+Hotel St.George`s: Alojamiento+vuelo+desayuno 419€ / Todo incuido: 549€  
+Alexandra hotel: Alojamiento+vuelo+desayuno 479€ / Todo incluido: 536€  
+Qawara palace horel: Alojamiento+vuelo+desayuno 439€ / Todo incluido: 560€  
 
+Teniendo en cuenta que se gastarían una media de 22€ y 18€ en comer y cenar respectivamente ¿Cual deberia escoger?   
 
+## A continuación comenzaremos con su resolución utilizando todos los criterios a la vez:  
+Creamos la tabla con la que trabajaremos:
+```{r}
+p11=419+22*3+18*3
+p12=549
+p21=479+22*3+18*3
+p22=536
+p31=439+22*3+18*3
+p32=560
+tabla2=crea.tablaX(c(p11,p12,
+                     p21,p22,
+                     p31,p32),3,2)
+tabla2
 
+```
+Resolvemos el problema:
+```{r}
+sol=criterio.Todos(tabla2,F)
+sol
+```
+Se puede ver que en 4 de ellos se elige el hotel número 2 y en 2 de ellos (Wald,Hurwicz) se elige el hotel número 3.
 
