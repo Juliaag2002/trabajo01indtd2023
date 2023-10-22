@@ -25,7 +25,8 @@ tabla1=crea.tablaX(c(1,3,9,
 kable(tabla1)
 ```
 
-##A continuación comenzaremos con su resolución utilizando los diferentes criterios:   
+  
+## A continuación comenzaremos con su resolución utilizando los diferentes criterios:   
 
 ### -Método wald   
 Para beneficios:  
@@ -109,14 +110,25 @@ Para costos:
 laplc_cost=criterio.Laplace(tabla1,F)
 laplc_cost
 ```
-La alternativa óptima es d4 con valor óptimo 1  
+La alternativa óptima es d4 con valor óptimo 1   
+
+### -Método del punto ideal
+
+Para beneficios:   
+```{r}
+puntoId_benef=criterio.PuntoIdeal(tabla1,T)
+puntoId_benef
+```
+La alternativa óptima es d2 con valor óptimo 2,236   
+Para costos:  
+```{r}
+puntoId_cost=criterio.PuntoIdeal(tabla1,F)
+puntoId_cost
+```
+La alternativa óptima es d4 con valor óptimo 4   
 
 
-
-
-
-
-
+# Problema 2
 
 
 
